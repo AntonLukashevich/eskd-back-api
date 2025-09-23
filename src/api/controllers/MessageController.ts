@@ -16,18 +16,18 @@ export const getMessageList = async (req: Request, res: Response) => {
 
 export const createMessage = async (req: Request, res: Response) => {
   try {
-    const { firstName, phone, message: text } = req.body;
+    const { name, phone, message: text } = req.body;
 
-    if (!firstName || !phone || !text) {
+    if (!name || !phone || !text) {
       return res.status(400).json({ error: "All fields are required" });
     }
 
-    if (firstName.length < 2 || firstName.length > 30) {
+    if (name.length < 2 || name.length > 30) {
       return res.status(400).json({ error: "The name must be between 2 and 30 characters." });
     }
 
     const newMessage = new Message({
-      firstName,
+      name,
       phone,
       message: text,
       created: new Date(),
