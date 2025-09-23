@@ -1,12 +1,10 @@
 import { Request, Response } from "express";
-import { Types } from "mongoose";
 import Message from "../../models/Message";
-import { error } from "console";
 
 
 export const getMessageList = async (req: Request, res: Response) => {
   try {
-    const messages = await Message.find().sort({ created: -1 });
+    const messages = await Message.find();
     res.status(200).json(messages);
   } catch (error) {
     console.error("Error:", error);
