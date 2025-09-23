@@ -1,25 +1,23 @@
 {
   "name": "back-api",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "dist/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run build && node dist/server.js",
+    "start": "node dist/server.js",
     "build": "tsc",
     "dev": "ts-node-dev src/server.ts",
     "ts": "tsc && node dist/server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^13.0.0",
     "express": "^5.1.0",
     "helmet": "^8.1.0",
-    "mongoose": "^8.11.0",
-    "ts-node-dev": "^2.0.0"
+    "mongoose": "^8.11.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
@@ -27,6 +25,7 @@
     "@types/node": "^24.5.2",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.2"
   }
 }
