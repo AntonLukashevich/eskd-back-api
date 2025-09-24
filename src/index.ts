@@ -10,6 +10,7 @@ const allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:4200",
   "http://localhost:3001",
+  'https://eskd-public-app.onrender.com'
 ];
 const options: cors.CorsOptions = {
   origin: allowedOrigins,
